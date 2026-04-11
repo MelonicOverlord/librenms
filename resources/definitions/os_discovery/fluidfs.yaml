@@ -88,7 +88,7 @@ modules:
           value: FLUIDFS-MIB::nASVolumeReplicationStatusEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.10.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
-          index: 'nASVolumeReplication'
+          index: 'nASVolumeReplication.{{ $index }}'
           group: 'NAS Volume Replication State'
           state_name: fluidfsVolumeReplication
           states:
@@ -103,7 +103,7 @@ modules:
           value: FLUIDFS-MIB::nASVolumeSecurityStyleEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.5.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
-          index: 'volumeSecurityStyle'
+          index: 'volumeSecurityStyle.{{ $index }}'
           group: 'NAS Volume Security Style'
           state_name: fluidfsSecurityStyle
           states:
@@ -115,7 +115,7 @@ modules:
           value: FLUIDFS-MIB::externalServerStateTypeEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.12.1.5.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::externalServerStateHost }}'
-          index: 'externalServerStateType'
+          index: 'externalServerStateType.{{ $index }}'
           group: 'External Servers'
           state_name: fluidfsServerStateType
           states:
@@ -134,7 +134,7 @@ modules:
           value: FLUIDFS-MIB::externalServerStateStateEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.12.1.6.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::externalServerStateHost }}'
-          index: 'externalServerStatus'
+          index: 'externalServerStatus.{{ $index }}'
           group: 'External Servers Status'
           state_name: fluidfsServerStateus
           states:
@@ -149,7 +149,7 @@ modules:
           value: FLUIDFS-MIB::nASVolumeNumberOfSnapshots
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.9.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
-          index: 'numberOfVolSnapshots'
+          index: 'numberOfVolSnapshots.{{ $index }}'
           group: 'Volume Snapshots'
         -
           oid: FLUIDFS-MIB::nASPool
