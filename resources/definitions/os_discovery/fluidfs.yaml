@@ -9,7 +9,7 @@ modules:
     state:
       data:
         -
-          oid: FLUIDFS-MIB::nASAppliance
+          oid: FLUIDFS-MIB::nASApplianceEntry
           value: FLUIDFS-MIB::nASApplianceStatusEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.16.1.12.{{ $index }}'
           descr: 'System Status'
@@ -23,7 +23,7 @@ modules:
             - { value: 3, generic: 3, descr: NotAvailable }
             - { value: 4, generic: 3, descr: Irrelevant }
         -
-          oid: FLUIDFS-MIB::storageSubsystem
+          oid: FLUIDFS-MIB::storageSubsystemEntry
           value: FLUIDFS-MIB::storageSubsystemLunsAccessibilityEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.32.1.3.{{ $index }}'
           descr: 'Subsystem Access'
@@ -47,7 +47,7 @@ modules:
             - { value: 1, generic: 0, descr: WriteThrough }
             - { value: 2, generic: 1, descr: NoService }
         -
-          oid: FLUIDFS-MIB::nASAppliance
+          oid: FLUIDFS-MIB::nASApplianceEntry
           value: FLUIDFS-MIB::nASApplianceWriteThroughModeEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.16.1.11.{{ $index }}'
           descr: 'Write Mode'
@@ -59,7 +59,7 @@ modules:
             - { value: 1, generic: 0, descr: Journaling }
             - { value: 2, generic: 1, descr: InTransition }
         -
-          oid: FLUIDFS-MIB::activeDirectoryStatus
+          oid: FLUIDFS-MIB::activeDirectoryStatusEntry
           value: FLUIDFS-MIB::activeDirectoryStatusConfiguredEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.1.1.4.{{ $index }}'
           descr: 'Configured'
@@ -70,7 +70,7 @@ modules:
             - { value: 0, generic: 0, descr: 'False' }
             - { value: 1, generic: 0, descr: 'True' }
         -
-          oid: FLUIDFS-MIB::activeDirectoryStatus
+          oid: FLUIDFS-MIB::activeDirectoryStatusEntry
           value: FLUIDFS-MIB::activeDirectoryStatusStatusEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.1.1.5.{{ $index }}'
           descr: 'Join State'
@@ -84,7 +84,7 @@ modules:
             - { value: 3, generic: 2, descr: Problematic }
             - { value: 4, generic: 0, descr: Optimal }
         -
-          oid: FLUIDFS-MIB::nASVolume
+          oid: FLUIDFS-MIB::nASVolumeEntry
           value: FLUIDFS-MIB::nASVolumeReplicationStatusEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.10.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
@@ -99,7 +99,7 @@ modules:
             - { value: 4, generic: 0, descr: Promoted }
             - { value: 5, generic: 3, descr: NotAvailable }
         -
-          oid: FLUIDFS-MIB::nASVolume
+          oid: FLUIDFS-MIB::nASVolumeEntry
           value: FLUIDFS-MIB::nASVolumeSecurityStyleEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.5.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
@@ -111,7 +111,7 @@ modules:
             - { value: 1, generic: 0, descr: Unix }
             - { value: 2, generic: 0, descr: NTFS }
         -
-          oid: FLUIDFS-MIB::externalServerState
+          oid: FLUIDFS-MIB::externalServerStateEntry
           value: FLUIDFS-MIB::externalServerStateTypeEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.12.1.5.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::externalServerStateHost }}'
@@ -130,7 +130,7 @@ modules:
             - { value: 8, generic: 0, descr: 'VM' }
             - { value: 9, generic: 0, descr: 'Auditing Server' }
         -
-          oid: FLUIDFS-MIB::externalServerState
+          oid: FLUIDFS-MIB::externalServerStateEntry
           value: FLUIDFS-MIB::externalServerStateStateEnumType
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.12.1.6.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::externalServerStateHost }}'
@@ -145,7 +145,7 @@ modules:
     count:
       data:
         -
-          oid: FLUIDFS-MIB::nASVolume
+          oid: FLUIDFS-MIB::nASVolumeEntry
           value: FLUIDFS-MIB::nASVolumeNumberOfSnapshots
           num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.41.1.9.{{ $index }}'
           descr: '{{ FLUIDFS-MIB::nASVolumeVolumeName }}'
@@ -211,7 +211,7 @@ modules:
   storage:
       data:
         -
-          oid: FLUIDFS-MIB::nASVolume
+          oid: FLUIDFS-MIB::nASVolumeEntry
           descr: FLUIDFS-MIB::nASVolumeVolumeName
           size: FLUIDFS-MIB::nASVolumeSizeMB
           used: FLUIDFS-MIB::nASVolumeUsedSpaceMB
