@@ -96,7 +96,7 @@ modules:
             - { value: 2, generic: 0, descr: Destination }
             - { value: 3, generic: 0, descr: SourceAndDestination }
             - { value: 4, generic: 0, descr: Promoted }
-            - { value: 4, generic: 3, descr: NotAvailable }
+            - { value: 5, generic: 3, descr: NotAvailable }
         - 
           oid: FLUIDFS-MIB::nASVolume
           value: FLUIDFS-MIB::nASVolumeSecurityStyleEnumType
