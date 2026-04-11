@@ -136,7 +136,7 @@ modules:
           descr: '{{ FLUIDFS-MIB::externalServerStateHost }}'
           index: 'externalServerStatus.{{ $index }}'
           group: 'External Servers Status'
-          state_name: fluidfsServerStateus
+          state_name: fluidfsServerStatus
           states:
             - { value: 0, generic: 0, descr: 'Available' }
             - { value: 1, generic: 2, descr: 'Unavailable' }
