@@ -206,3 +206,12 @@ modules:
           descr: 'Number of NFS Exports'
           index: 'numberOfNfsExports.{{ $index }}'
           group: 'NAS Pool'
+          
+  storage:
+      data:
+        -
+          oid: FLUIDFS-MIB::nASVolume
+          descr: FLUIDFS-MIB::nASVolumeVolumeName
+          size: FLUIDFS-MIB::nASVolumeSizeMB
+          used: FLUIDFS-MIB::nASVolumeUsedSpaceMB
+          units: 1048576
