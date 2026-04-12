@@ -1,9 +1,9 @@
 modules:
   os:
     version: FLUIDFS-MIB::versionVersion
-    hardware: FLUIDFS-MIB::nASApplianceModelEnumType
+    hardware: FLUIDFS-MIB::versionProductName
     serial: FLUIDFS-MIB::nASApplianceApplianceServiceTag
-    features: FLUIDFS-MIB::clusterNameClusterName
+    features: FLUIDFS-MIB::nASApplianceModelEnumType
 
   sensors:
     state:
