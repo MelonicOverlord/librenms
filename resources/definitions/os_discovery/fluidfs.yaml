@@ -11,9 +11,9 @@ modules:
         -
           oid: FLUIDFS-MIB::nASAppliance
           value: FLUIDFS-MIB::nASApplianceStatusEnumType
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.16.1.8.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.16.1.8{{ $noindex }}'
           descr: 'System Status'
-          index: 'nASApplianceStatus.{{ $index }}'
+          index: 'nASApplianceStatus.0'
           group: 'System Availability'
           state_name: fluidfsApplianceStatus
           states:
@@ -37,9 +37,9 @@ modules:
         -
           oid: FLUIDFS-MIB::systemServiceMode
           value: FLUIDFS-MIB::systemServiceModeStateEnumType
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.36.2.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.36.2{{ $noindex }}'
           descr: 'Service Mode'
-          index: 'systemServiceMode.{{ $index }}'
+          index: 'systemServiceMode.0'
           group: 'System Availability'
           state_name: fluidfsServiceMode
           states:
@@ -154,58 +154,58 @@ modules:
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfVirtualVolumes
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.9.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.9{{ $noindex }}'
           descr: 'Virtual Volumes'
-          index: 'numberOfVirtualVolumes.{{ $index }}'
+          index: 'numberOfVirtualVolumes.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfClonedVolumes
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.16.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.16{{ $noindex }}'
           descr: 'Cloned Volumes'
-          index: 'numberOfClonedVolumes.{{ $index }}'
+          index: 'numberOfClonedVolumes.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfSnapshots
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.15.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.15{{ $noindex }}'
           descr: 'Snapshots'
-          index: 'numberOfPoolSnapshots.{{ $index }}'
+          index: 'numberOfPoolSnapshots.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfVirtualVolumesWithSnapshots
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.10.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.10{{ $noindex }}'
           descr: 'Virtual Volumes With Snapshots'
-          index: 'numberOfVirtVolSnapshots.{{ $index }}'
+          index: 'numberOfVirtVolSnapshots.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfVirtualVolumesWithReplication
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.11.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.11{{ $noindex }}'
           descr: 'Virtual Volumes With Replication'
-          index: 'numberOfVirtVolRepl.{{ $index }}'
+          index: 'numberOfVirtVolRepl.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfVirtualVolumesWithDataReduction
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.12.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.12{{ $noindex }}'
           descr: 'Virtual Volumes With Data Reduction'
-          index: 'numberOfVirtVolDataRedu.{{ $index }}'
+          index: 'numberOfVirtVolDataRedu.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfCifsShares
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.14.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.14{{ $noindex }}'
           descr: 'CIFS Shares'
-          index: 'numberOfCifsShares.{{ $index }}'
+          index: 'numberOfCifsShares.0'
           group: 'NAS Pool'
         -
           oid: FLUIDFS-MIB::nASPool
           value: FLUIDFS-MIB::nASPoolNumberOfNfsExports
-          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.13.{{ $index }}'
+          num_oid: '.1.3.6.1.4.1.674.11000.2000.200.1.38.13{{ $noindex }}'
           descr: 'NFS Exports'
-          index: 'numberOfNfsExports.{{ $index }}'
+          index: 'numberOfNfsExports.0'
           group: 'NAS Pool'
 
   storage:
