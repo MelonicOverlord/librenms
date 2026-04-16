@@ -1,9 +1,9 @@
-ISIS-MIB DEFINITIONS ::= BEGIN
+ISIS-MIB-LEGACY DEFINITIONS ::= BEGIN
      IMPORTS
         TEXTUAL-CONVENTION, RowStatus, TruthValue, TimeStamp
                 FROM SNMPv2-TC               -- RFC2579
         MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
-            Unsigned32, Counter32, mib-2
+            Unsigned32, Counter32, mib-2, experimental
                 FROM SNMPv2-SMI              -- RFC2578
         MODULE-COMPLIANCE, OBJECT-GROUP, NOTIFICATION-GROUP
                 FROM SNMPv2-CONF             -- RFC2580
@@ -3842,8 +3842,7 @@ isisGroups      OBJECT IDENTIFIER ::= { isisConformance 2 }
                     isisSystemGroup,
                     isisCircuitGroup,
                     isisISAdjGroup
-	    }
-
+                }
        OBJECT isisSysLevelType
        MIN-ACCESS read-only
        DESCRIPTION
@@ -3987,6 +3986,7 @@ isisGroups      OBJECT IDENTIFIER ::= { isisConformance 2 }
        OBJECT isisCircMeshGroupEnabled
        MIN-ACCESS read-only
        DESCRIPTION
+            "Write access is not required."
 
        OBJECT isisCircMeshGroup
        MIN-ACCESS read-only
