@@ -4,7 +4,6 @@
  * Voss.php
  *
  * Extreme VOSS ISIS Adjacencies
- * Adapted from Iosxe.php
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +35,7 @@ use LibreNMS\Interfaces\Polling\OSPolling;
 use LibreNMS\Util\IP;
 use SnmpQuery;
 
-class Voss extends Shared\Extreme implements IsIsDiscovery, IsIsPolling
+class Voss extends Shared\Extreme implements IsIsDiscovery, IsIsPolling {
     /**
      * Array of shortened ISIS codes
      *
@@ -60,7 +59,7 @@ class Voss extends Shared\Extreme implements IsIsDiscovery, IsIsPolling
 
             foreach ($adjacencies_data as $circuit_index => $adjacency_list) {
                 foreach ($adjacency_list as $adjacency_index => $adjacency_data) {
-                    if (empty($circuits[$circuit_index]['ISIS-MIB-LEGACY::isisCircPassiveCircuit'])) {
+                    if (empty($circuits[$circuit_index]['ISIS-MIB-LEGACY::isisCircIfIndex'])) {
                         continue;
                     }
 
@@ -92,7 +91,7 @@ class Voss extends Shared\Extreme implements IsIsDiscovery, IsIsPolling
 
     public function pollIsIs($adjacencies): Collection
     {
-        $states = SnmpQuery::enumStrings()->walk('ISIS-MIB-LEGACY::isisAdjState')->values();
+        $states = SnmpQuery::enumStrings()->walk('ISIS-MIB-LEGACY::isisISAdjState')->values();
         $up_count = array_count_values($states)['up'] ?? 0;
 
         if ($up_count !== $adjacencies->count()) {
@@ -104,7 +103,7 @@ class Voss extends Shared\Extreme implements IsIsDiscovery, IsIsPolling
         $uptime = SnmpQuery::walk('ISIS-MIB-LEGACY::isisCircLastUpTime')->values();
 
         return $adjacencies->each(function ($adjacency) use ($states, $uptime): void {
-            $adjacency->isisISAdjState = $states['ISIS-MIB-LEGACY::isisAdjState' . $adjacency->index] ?? $adjacency->isisISAdjState;
+            $adjacency->isisISAdjState = $states['ISIS-MIB-LEGACY::isisISAdjState' . $adjacency->index] ?? $adjacency->isisISAdjState;
             $adjacency->isisISAdjLastUpTime = $this->parseAdjacencyTime($uptime['ISIS-MIB-LEGACY::isisCircLastUpTime' . $adjacency->index] ?? 0);
         });
     }
