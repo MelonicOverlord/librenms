@@ -35,6 +35,7 @@ class System extends Component
             $device->overwrite_ip
                 ? ['label' => __('Assigned IP'), 'value' => $device->overwrite_ip]
                 : ['label' => __('Resolved IP'), 'value' => $device->ip],
+            ['label' => __('Alias'), 'value' => $device->alias],
             ['label' => __('Description'), 'value' => $device->purpose],
             ['label' => __('Hardware'), 'value' => $device->hardware],
             ['label' => __('Operating System'), 'value' => trim(LibrenmsConfig::getOsSetting($device->os, 'text') . " $device->version $features")],
