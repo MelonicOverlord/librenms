@@ -34,6 +34,7 @@ class UpdateDeviceRequest extends FormRequest
             'sysLocation' => 'nullable|string',
             'override_sysContact' => 'nullable|boolean',
             'override_sysContact_string' => 'nullable|string',
+	        'alias' => 'nullable|string',
             'disabled' => 'nullable|boolean',
             'disable_notify' => 'nullable|boolean',
             'ignore' => 'nullable|boolean',
