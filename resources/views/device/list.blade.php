@@ -43,13 +43,13 @@
                 return '';
             },
             "device": function (column, row) {
-                var $wrapper = $("<div>" + row.hostname + "</div>");
+                var $devicewrapper = $("<div>" + row.hostname + "</div>");
                 if (row.alias && row.alias.toString().trim() !== "") {
                     var aliasHtml = '<span style="font-weight: normal;">' + row.alias + '</span>';
                     var pipeHtml = '<span style="opacity: 0.35; padding: 0 6px;">|</span>';
-                    $wrapper.append(pipeHtml + aliasHtml); // if the device has an alias, build it into a wrapper to display
+                    $devicewrapper.append(pipeHtml + aliasHtml); // if the device has an alias, build it into a wrapper to display
                 }
-                return $wrapper.html();
+                return $devicewrapper.html();
             },
             "uptime": function (column, row) {
                 if (row.status == 'down') {
