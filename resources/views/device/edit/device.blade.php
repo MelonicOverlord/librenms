@@ -53,6 +53,13 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="edit-alias-input" class="col-sm-2 control-label">Device Alias</label>
+                <div class="col-sm-6">
+                     <input type="text" id="edit-alias-input" name="alias" class="form-control" placeholder="e.g. IPv6 Address" value="{{ old('alias', $device->alias) }}">
+                </div>
+            </div>
+
             <div class="form-group" data-toggle="tooltip" data-container="body" data-placement="bottom" title="{{ __('device.edit.overwrite_ip_title') }}" >
                 <label for="edit-overwrite_ip-input" class="col-sm-2 control-label text-danger" >{{ __('device.edit.overwrite_ip') }}</label>
                 <div class="col-sm-6">
