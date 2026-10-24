@@ -77,7 +77,7 @@ class DeviceController extends TableController
 
     protected function searchFields($request): array
     {
-        return ['sysName', 'hostname', 'display', 'hardware', 'os', 'locations.location', 'purpose', 'notes'];
+        return ['sysName', 'hostname', 'display', 'hardware', 'os', 'locations.location', 'purpose', 'notes', 'alias'];
     }
 
     protected function sortFields(Request $request): array
@@ -170,6 +170,7 @@ class DeviceController extends TableController
             'maintenance' => $model->isUnderMaintenance(),
             'icon' => '<img src="' . asset($model->icon) . '" title="' . pathinfo((string) $model->icon, PATHINFO_FILENAME) . '">',
             'hostname' => Url::modernDeviceLink($model, extra: $this->isDetailed() ? $model->name() : ''),
+            'alias' => $model->alias,
             'metrics' => $this->getMetrics($model),
             'hardware' => htmlspecialchars(Rewrite::ciscoHardware($model)),
             'os' => $this->getOsText($model),
