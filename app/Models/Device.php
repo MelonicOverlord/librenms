@@ -74,6 +74,7 @@ class Device extends BaseModel
         'sysObjectID',
         'snmpEngineID',
         'type',
+        'alias',
         'version',
         'uptime',
     ];
