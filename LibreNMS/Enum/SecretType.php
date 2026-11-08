@@ -37,6 +37,8 @@ use LibreNMS\Polling\Secrets\Definitions\SecretDefinition;
 use LibreNMS\Polling\Secrets\Definitions\SnmpCommunitySecretDefinition;
 use LibreNMS\Polling\Secrets\Definitions\SnmpV3SecretDefinition;
 use LibreNMS\Polling\Secrets\Definitions\UnknownSecretDefinition;
+use LibreNMS\Polling\Secrets\Data\WinrmSecretData;
+use LibreNMS\Polling\Secrets\Definitions\WinrmSecretDefinition;
 
 enum SecretType: string
 {
@@ -45,6 +47,7 @@ enum SecretType: string
     case SnmpCommunity = 'snmp-community';
     case SnmpV3 = 'snmp-v3';
     case Ipmi = 'ipmi';
+    case Winrm = 'winrm';
     /** Stored types this version does not know, such as ones from a development branch */
     case Unknown = 'unknown';
 
@@ -61,6 +64,7 @@ enum SecretType: string
         return match ($this) {
             self::SnmpCommunity => new SnmpCommunitySecretDefinition,
             self::SnmpV3 => new SnmpV3SecretDefinition,
+            self::Winrm => new WinrmSecretDefinition,
             self::Ipmi => new IpmiSecretDefinition,
             self::Unknown => new UnknownSecretDefinition,
         };
@@ -76,6 +80,7 @@ enum SecretType: string
         return match ($this) {
             self::SnmpCommunity => SnmpCommunitySecretData::fromArray($data),
             self::SnmpV3 => SnmpV3SecretData::fromArray($data),
+            self::Winrm => WinrmSecretData::fromArray($data),
             self::Ipmi => IpmiSecretData::fromArray($data),
             self::Unknown => new UnknownSecretData($data),
         };
