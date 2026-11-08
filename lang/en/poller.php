@@ -5,6 +5,7 @@ return [
     'methods' => [
         'snmp' => 'SNMP',
         'icmp' => 'ICMP',
+        'winrm' => 'WinRM',
         'ipmi' => 'IPMI',
         'unix-agent' => 'Unix Agent',
         'unknown' => 'Unknown',
